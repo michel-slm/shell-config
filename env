@@ -1,0 +1,5 @@
+for d in .local/bin bin; do
+  if [ -d "$HOME/$d" ]; then
+    export PATH=$HOME/$d:$PATH
+  fi
+done
