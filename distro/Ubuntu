@@ -10,3 +10,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+
+for f in \
+  /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh \
+; do
+    test -r $f && source $f
+done
