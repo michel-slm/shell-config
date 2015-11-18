@@ -4,6 +4,9 @@ fi
 
 source "${HOME}/.antigen/antigen.zsh"
 
+# oh-my-zsh
+antigen use oh-my-zsh
+
 # k - https://github.com/rimraf/k
 antigen bundle rimraf/k
 
@@ -11,9 +14,13 @@ antigen bundle rimraf/k
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
+# misc
+antigen bundle zsh-users/zsh-history-substring-search
+
+
 source "${HOME}/.config/shell/distro/$(lsb_release -is)"
 
-for f in ${HOME}/.config/shell/{aliases,env};
+for f in ${HOME}/.config/shell/{env,aliases};
 do
   [ -e "$f" ] && source "$f"
 done
