@@ -1,5 +1,13 @@
+# Prefixes
 for d in .local/bin bin; do
   if [ -d "$HOME/$d" ]; then
     export PATH=$HOME/$d:$PATH
+  fi
+done
+
+# Suffixes
+for d in .rvm/bin; do
+  if [ -d "$HOME/$d" ]; then
+    export PATH=$PATH:$HOME/$d
   fi
 done

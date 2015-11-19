@@ -17,8 +17,14 @@ antigen bundle sindresorhus/pure
 # misc
 antigen bundle zsh-users/zsh-history-substring-search
 
+antigen apply
 
 source "${HOME}/.config/shell/distro/$(lsb_release -is)"
+
+for f in ${HOME}/.config/shell/conf.d/*;
+do
+  source "$f"
+done
 
 for f in ${HOME}/.config/shell/{env,aliases};
 do
