@@ -1,3 +1,5 @@
+setopt nullglob
+
 if [ ! -d "${HOME}/.antigen" ]; then
   git clone https://github.com/zsh-users/antigen.git ${HOME}/.antigen
 fi
@@ -21,10 +23,14 @@ antigen apply
 
 source "${HOME}/.config/shell/distro/$(lsb_release -is)"
 
-for f in ${HOME}/.config/shell/conf.d/*;
-do
-  source "$f"
-done
+CONFD="${HOME}/.config/shell/conf.d"
+if [[ -d "${CONFD}" ]];
+then
+  for f in ${CONFD}/*;
+  do
+    source "$f"
+  done
+fi
 
 for f in ${HOME}/.config/shell/{env,aliases};
 do
