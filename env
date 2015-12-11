@@ -17,3 +17,5 @@ for d in .rvm/bin; do
     export PATH=$PATH:$HOME/$d
   fi
 done
+
+[ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && . "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm
