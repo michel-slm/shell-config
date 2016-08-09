@@ -21,7 +21,12 @@ antigen bundle zsh-users/zsh-history-substring-search
 
 antigen apply
 
-source "${HOME}/.config/shell/distro/$(lsb_release -is)"
+DISTRO_CONF="${HOME}/.config/shell/distro/$(lsb_release -is)"
+if [[ -f "${DISTRO_CONF}" ]];
+then
+  source "${DISTRO_CONF}"
+fi
+
 
 CONFD="${HOME}/.config/shell/conf.d"
 if [[ -d "${CONFD}" ]];
